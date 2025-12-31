@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
 import { OutlineInputBoxWithIcon } from './../../../components/library/input';
 import { AnimatedText } from './../../../components/library/text';
-import { Colors, Images } from '../../../constants';
+import { Colors, Images, NavigationStrings } from '../../../constants';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -18,7 +18,14 @@ import { screenStyles, authStyles } from './../../../styles';
 import { scale, verticalScale } from 'react-native-size-matters';
 import { GradientTextButton } from './../../../components/library/button';
 import { Link, Spacer } from './../../../components/library/boots';
+import { useNavigation } from '@react-navigation/native';
 const LoginScreen = () => {
+    const navigation = useNavigation();
+    const onPressOpenHomePage = () => {
+        navigation.navigate(NavigationStrings.MAIN_STACK, {
+            screen: NavigationStrings.HOME_SCREEN
+        })
+    }
     return (
         <SafeAreaView style={screenStyles.statusArea}>
             <ScrollView
@@ -81,7 +88,7 @@ const LoginScreen = () => {
                     />
                     <Link label={"Forgot Password? Reset now"} color={Colors.THEME_PURPLE} />
                     <View style={screenStyles.btn}>
-                        <GradientTextButton label='Login' />
+                        <GradientTextButton label='Login' onPress={onPressOpenHomePage} />
                     </View>
                 </View>
             </ScrollView>
