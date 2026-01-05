@@ -50,7 +50,6 @@ const PriceChartTable = ({ data = [] }) => {
 
     return (
         <View style={styles.container}>
-            {/* Header */}
             <View style={styles.header}>
                 <View style={styles.colIndex}>
                     <Text style={styles.headerText}>#</Text>

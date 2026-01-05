@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { screenStyles } from '../../../../styles'
-import { BackPressTopBar } from '../../../../components/library/navbar'
+import { BackPressTopBar, BackPressWithDropdown } from '../../../../components/library/navbar'
 import { PriceChartTable } from '../../../../components/library/table'
 export const priceChartData = [
     {
@@ -57,8 +57,7 @@ export const priceChartData = [
 const PriceChatScreen = () => {
     return (
         <SafeAreaView style={screenStyles.statusArea}>
-            <BackPressTopBar title={"Price chart"} />
-
+            <BackPressWithDropdown title={"Price chart"} />
             <View style={screenStyles.container}>
                 <PriceChartTable data={priceChartData} />
             </View>
